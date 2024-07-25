@@ -59,6 +59,54 @@
                     </li>
                     @endif
 
+                     @if ($usr->can('groups.create') || $usr->can('groups.view') ||  $usr->can('groups.edit') ||  $usr->can('groups.delete'))
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-envelope"></i><span>
+                             Groups
+                        </span></a>
+                        <ul class="collapse {{ Route::is('admin.groups.create') || Route::is('admin.groups.index') || Route::is('admin.groups.edit') || Route::is('admin.groups.show') ? 'in' : '' }}">
+                            
+                            @if ($usr->can('groups.view'))
+                                <li class="{{ Route::is('admin.groups.index')  || Route::is('admin.groups.edit') ? 'active' : '' }}"><a href="{{ route('admin.groups.index') }}">Contact Groups</a></li>
+                            @endif
+                        </ul>
+                    </li>
+                    @endif
+
+                     @if ($usr->can('contacts.create') || $usr->can('contacts.view') ||  $usr->can('contacts.edit') ||  $usr->can('contacts.delete') 
+                     ||  $usr->can('testcontacts.create') || $usr->can('testcontacts.view') ||  $usr->can('testcontacts.edit') ||  $usr->can('testcontacts.delete')
+                     ) 
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-phone"></i><span>
+                            Contacts
+                        </span></a>
+                        <ul class="collapse {{ Route::is('admin.contacts.create') || Route::is('admin.contacts.index') || Route::is('admin.contacts.edit') || Route::is('admin.contacts.show') || Route::is('admin.testcontacts.create') || Route::is('admin.testcontacts.index') || Route::is('admin.testcontacts.edit') || Route::is('admin.testcontacts.show')  ? 'in' : '' }}">
+                            
+                            @if ($usr->can('contacts.view'))
+                                <li class="{{ Route::is('admin.contacts.index')  || Route::is('admin.contacts.edit') ? 'active' : '' }}"><a href="{{ route('admin.contacts.index') }}">Prod Contacts</a></li>
+                            @endif
+
+                            @if ($usr->can('testcontacts.view'))
+                                <li class="{{ Route::is('admin.testcontacts.index')  || Route::is('admin.testcontacts.edit') ? 'active' : '' }}"><a href="{{ route('admin.testcontacts.index') }}">Test Contacts</a></li>
+                            @endif
+                        </ul>
+                    </li>
+                    @endif
+
+                     @if ($usr->can('whatsappmessage.create') || $usr->can('whatsappmessage.view') ||  $usr->can('whatsappmessage.edit') ||  $usr->can('whatsappmessage.delete'))
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-envelope"></i><span>
+                            Email & Massages
+                        </span></a>
+                        <ul class="collapse {{ Route::is('admin.whatsappmessage.create') || Route::is('admin.whatsappmessage.index') || Route::is('admin.whatsappmessage.edit') || Route::is('admin.whatsappmessage.show') ? 'in' : '' }}">
+                            
+                            @if ($usr->can('whatsappmessage.view'))
+                                <li class="{{ Route::is('admin.whatsappmessage.index')  || Route::is('admin.whatsappmessage.edit') ? 'active' : '' }}"><a href="{{ route('admin.whatsappmessage.index') }}">WhatsApp Messages</a></li>
+                            @endif
+                        </ul>
+                    </li>
+                    @endif
+
                 </ul>
             </nav>
         </div>

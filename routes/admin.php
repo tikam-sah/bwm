@@ -4,10 +4,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Backend\AdminsController;
-use App\Http\Controllers\Backend\ContactsController;
-use App\Http\Controllers\Backend\TestcontactsController;
-use App\Http\Controllers\Backend\WhatsappmessageController;
-use App\Http\Controllers\Backend\GroupsController;
 use App\Http\Controllers\Backend\Auth\ForgotPasswordController;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -52,11 +48,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
     Route::post('/password/reset/submit', [ForgotPasswordController::class, 'reset'])->name('password.update');
 
-    //Contacts
     Route::resource('contacts', ContactsController::class);
-    Route::resource('testcontacts', TestcontactsController::class);
-    Route::resource('whatsappmessage', WhatsappmessageController::class);
-    Route::resource('groups', GroupsController::class);
 
 
 })->middleware('auth:admin');
