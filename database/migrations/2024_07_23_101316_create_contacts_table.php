@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->enum('whatsapp', ['yes', 'no'])->default('no');;
             $table->enum('telegram', ['yes', 'no'])->default('no');;
-            $table->integer('group')->default(0);
+            $table->integer('groups')->default(0);
             $table->timestamps();
         });
     }

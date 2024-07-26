@@ -71,7 +71,7 @@ class TestcontactsController extends Controller
         $testcontacts->code = $request->code;
         $testcontacts->phone = $request->phone;
         $testcontacts->whatsapp = $request->whatsapp;
-        $testcontacts->group = $request->group;
+        $testcontacts->groups = $request->groups;
         
         $testcontacts->save();
         session()->flash('success', 'Test Contacts has been updated.');

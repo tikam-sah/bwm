@@ -71,7 +71,7 @@
                                     <td>{{ $admin->code }}</td>
                                      <td>{{ $admin->phone }}</td>
                                      <td>{{ $admin->whatsapp }}</td>
-                                     <td>{{ Helper::get_group_name($admin->group) }}  </td>
+                                     <td>{{ Helper::get_group_name($admin->groups) }}  </td>
                                     <td>
                                         @if (auth()->user()->can('testcontacts.edit'))
                                             <a class="btn btn-success text-white" href="{{ route('admin.testcontacts.edit', $admin->id) }}">Edit</a>

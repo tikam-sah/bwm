@@ -71,7 +71,7 @@ class ContactsController extends Controller
         $contacts->code = $request->code;
         $contacts->phone = $request->phone;
         $contacts->whatsapp = $request->whatsapp;
-        $contacts->group = $request->group;
+        $contacts->groups = $request->groups;
         
         $contacts->save();
         session()->flash('success', 'Contacts has been updated.');

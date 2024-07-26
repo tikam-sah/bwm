@@ -77,7 +77,7 @@ Test Contacts Edit - Admin Panel
                             </div>
                             <div class="form-group col-md-6 col-sm-6" required>
                                 <label for="username">Group</label>
-                               <select name="group" id="group" class="form-control">
+                               <select name="groups" id="groups" class="form-control">
                                  @foreach ($groups as $group)
                                       <option value="{{ $group->id}}" @if($group->id == $admin->group) selected @endif>{{ $group->name  }}</option>
                                 @endforeach
