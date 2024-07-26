@@ -57,10 +57,7 @@ class TestcontactsController extends Controller
     {
        $this->checkAuthorization(auth()->user(), ['testcontacts.edit']);
 
-        // Create New contact.
         $testcontacts = TestContacts::find($id);
-
-        // Validation Data.
         $request->validate([
             'name' => 'required|max:50',
             'code' => 'required|max:4' ,
