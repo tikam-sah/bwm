@@ -3,11 +3,11 @@
 /public/storage
 /storage/*.key
 /vendor
-/Helpers
-/Http
-/Models
-/database
-/routes	
+/Helpers/*
+/Http/*
+/Models*
+/database/*
+/routes/*	
 .env
 .env.backup
 .phpunit.result.cache
