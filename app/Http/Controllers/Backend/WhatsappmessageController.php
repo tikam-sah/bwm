@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
-
 class WhatsappmessageController extends Controller
 {
     public function index(): Renderable
